@@ -7,7 +7,7 @@ app.use(cors())
 
 app.get('/summary/:id', (request, response) => {
     download(request.params.id)
-    response.send('ID do video: '+ request.params.id)
+    response.json({result: "Download realizado com sucesso"})
 })
 
 app.listen(3333, () => console.log('server escutando na porta 3333'))
