@@ -5,6 +5,10 @@ export function download(videoId) {
     const videoURL = "https://www.youtube.com.br/shorts/" + videoId
     console.log('Fazendo Download do video: '+ videoId)
     
+    ytdl(videoURL, {quality: "lowestaudio", filter: "audioonly"}).on("info", (info)=>{
+        console.log(info)
+
+    })
+    
 }
 
-ytdl(videoURL, {quality: "lowestaudio", filter: "audioonly"})
